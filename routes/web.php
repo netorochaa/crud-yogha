@@ -13,10 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/', 'HomeController@index');
+
+Route::namespace('Admin')->group(function () {
+    Route::resource('property', 'PropertyController');
+    Route::resource('type',     'TypeController');
 });
-
-Route::resource('property', 'PropertyController');
-
-Route::resource('type', 'PropertyController');
