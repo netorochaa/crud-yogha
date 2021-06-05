@@ -1,6 +1,5 @@
 @include('templates.head')
-    <div class="wrapper">
-        @include('templates.navbar')
+    <main>
         @yield('content')
-    </div>
+    </main>
 @include('templates.footer')

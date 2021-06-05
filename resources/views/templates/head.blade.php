@@ -9,3 +9,6 @@
     <title>CRUD YOGHA</title>
 </head>
 <body>
+    <header>
+        @include('templates.navbar')
+    </header>
