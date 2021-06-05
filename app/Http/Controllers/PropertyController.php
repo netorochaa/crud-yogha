@@ -12,17 +12,7 @@ class PropertyController extends Controller
         //
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
-    {
-        //
-    }
-
-    public function show(Property $property)
     {
         //
     }
