@@ -3,9 +3,9 @@
     <div class="card bg-light">
         <div class="card-body">
             @if ($property ?? null)
-                {!! Form::model($property, ['route' => ['property.update', $property->id], 'method' => 'PUT']) !!}
+            {!! Form::model($property, ['route' => ['property.update', $property->id], 'method' => 'PUT']) !!}
             @else
-                {!! Form::open(['route' => 'property.store', 'method' => 'POST']) !!}
+            {!! Form::open(['route' => 'property.store', 'method' => 'POST']) !!}
             @endif
                 {!! Form::token() !!}
                 <div class="mb-3">
@@ -48,9 +48,9 @@
             {!! Form::close() !!}
 
             @if ($property ?? null)
-                {!! Form::open(['route' => ['property.destroy', $property->id], 'method' => 'DELETE']) !!}
-                    {!! Form::submit('Deletar', ['class' => 'btn btn-danger', 'style' => 'float: right']) !!}
-                {!! Form::close() !!}
+            {!! Form::open(['route' => ['property.destroy', $property->id], 'method' => 'DELETE']) !!}
+                {!! Form::submit('Deletar', ['class' => 'btn btn-danger', 'style' => 'float: right']) !!}
+            {!! Form::close() !!}
             @endif
         </div>
     </div>
