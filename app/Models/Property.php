@@ -14,6 +14,7 @@ class Property extends Model
     public const VALIDATION_RULES = [
         'name'      => 'required|max:50',
         'city'      => 'required|max:50',
+        'type_id'   => 'required',
         'occupant'  => 'required|numeric|min:1|max:99',
         'bedroom'   => 'required|numeric|min:1|max:99',
         'restroom'  => 'required|numeric|min:1|max:99'

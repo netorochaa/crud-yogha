@@ -28,9 +28,9 @@ class TypeController extends Controller
 
     public function edit(Type $type)
     {
-        return view('admin.property.index', [
+        return view('admin.type.index', [
             'types' => Type::all()->sortBy('id'),
-            'property'  => $type
+            'type'  => $type
         ]);
     }
 
