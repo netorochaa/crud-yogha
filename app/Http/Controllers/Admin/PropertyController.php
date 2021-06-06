@@ -55,6 +55,10 @@ class PropertyController extends Controller
 
     public function destroy(Property $property)
     {
-        //
+        $property->delete();
+
+        session()->flash('success', 'Propriedade removida!');
+
+        return redirect()->route('home');
     }
 }
