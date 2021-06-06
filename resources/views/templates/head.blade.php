@@ -12,3 +12,5 @@
     <header>
         @include('templates.navbar')
     </header>
+    
+    @include('templates.components.alert')

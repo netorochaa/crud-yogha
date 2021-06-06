@@ -2,9 +2,6 @@
     <h3 class="p-2">Cadastro de propriedade</h3>
     <div class="card bg-light">
         <div class="card-body">
-
-            @include('templates.components.alert')
-  
             @if ($property ?? null)
                 {!! Form::model($property, ['route' => ['property.update', $property->id], 'method' => 'PUT']) !!}
             @else
@@ -55,7 +52,6 @@
                     {!! Form::submit('Deletar', ['class' => 'btn btn-danger', 'style' => 'float: right']) !!}
                 {!! Form::close() !!}
             @endif
-
         </div>
     </div>
 </div>
