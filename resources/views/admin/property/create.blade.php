@@ -2,20 +2,22 @@
     <h3 class="p-2">Cadastro de propriedade</h3>
     <div class="card bg-light">
         <div class="card-body">
-            @if ($property ?? null) 
-                {!! Form::model($property, ['route' => ['property.update', $property->id], 'method' => 'put']) !!}
-            @else 
-                {!! Form::open(['route' => 'property.store', 'method' => 'post']) !!}
+
+            @include('templates.components.alert')
+  
+            @if ($property ?? null)
+                {!! Form::model($property, ['route' => ['property.update', $property->id], 'method' => 'PUT']) !!}
+            @else
+                {!! Form::open(['route' => 'property.store', 'method' => 'POST']) !!}
             @endif
                 {!! Form::token() !!}
                 <div class="mb-3">
                     {!! Form::label('name', 'Nome', ['class' => 'form-label']) !!}
                     {!! Form::text('name', $property->name ?? null, ['class' => 'form-control', 'id' => 'name']) !!}
-                    {{-- <div id="name" class="form-text">We'll never share your email with anyone else.</div> --}}
                 </div>
                 <div class="mb-3">
                     {!! Form::label('type', 'Tipo', ['class' => 'form-label']) !!}
-                    {!! Form::select('type', $types, $property->type_id ?? null, ['class' => 'form-select', 'id' => 'type']) !!}
+                    {!! Form::select('type_id', $types, $property->type_id ?? null, ['class' => 'form-select', 'id' => 'type']) !!}
                 </div>
                 <div class="mb-3">
                     {!! Form::label('city', 'Cidade', ['class' => 'form-label']) !!}
@@ -45,8 +47,15 @@
                     {!! Form::checkbox('pool', null, $property->pool ?? null, ['class' => 'form-check-input', 'id' => 'pool']) !!}
                     {!! Form::label('pool', 'Piscina', ['class' => 'form-check-label']) !!}
                 </div>
-                {!! Form::submit('Enivar', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit( $property ?? null ? 'Atualizar' : 'Cadastrar', ['class' => 'btn btn-primary', 'style' => 'float: left']) !!}
             {!! Form::close() !!}
+
+            @if ($property ?? null)
+                {!! Form::open(['route' => ['property.destroy', $property->id], 'method' => 'DELETE']) !!}
+                    {!! Form::submit('Deletar', ['class' => 'btn btn-danger', 'style' => 'float: right']) !!}
+                {!! Form::close() !!}
+            @endif
+
         </div>
     </div>
 </div>

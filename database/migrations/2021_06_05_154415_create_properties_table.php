@@ -15,8 +15,8 @@ class CreatePropertiesTable extends Migration
             $table->char('occupant', 2);
             $table->char('bedroom', 2);
             $table->char('restroom', 2);
-            $table->string('internet', 3);
-            $table->string('pool', 3);
+            $table->string('internet', 3)->nullable();
+            $table->string('pool', 3)->nullable();
 
             $table->unsignedInteger('type_id');
 			$table->foreign('type_id')->references('id')->on('types');
